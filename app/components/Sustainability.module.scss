@@ -1,0 +1,108 @@
+.sustainability {
+    padding: 8rem 0;
+    background: white;
+    overflow: hidden;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+
+        @media (max-width: 900px) {
+            flex-direction: column;
+        }
+    }
+
+    .content {
+        flex: 1;
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-family: var(--font-michroma);
+            margin-bottom: 2rem;
+        }
+
+        .desc {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .initiatives {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+
+            .item {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                font-weight: 600;
+                color: #333;
+
+                .icon {
+                    color: green; // Specific override for sustainability
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    .imagePlaceholder {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .circle {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e0ffd4 0%, #ffffff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                border: 2px dashed green;
+                animation: spin 20s linear infinite;
+            }
+
+            span {
+                font-family: var(--font-michroma);
+                font-size: 1.2rem;
+                color: green;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,127 @@
+.hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+
+    .parallaxBg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 120%; // Taller for parallax
+        background: url('/bg.jpg') no-repeat center center;
+        background-size: cover;
+        z-index: -1;
+
+        // Overlay to ensure text readability
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        // Abstract grid pattern (optional over image)
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(255, 76, 1, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 76, 1, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 2;
+        }
+
+        // .parallaxLayer {
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     width: 100%;
+        //     height: 100%;
+        //     background: url('/paralax.jpg') no-repeat center bottom;
+        //     background-size: cover;
+        //     opacity: 0.8;
+        //     z-index: 0;
+        //     mix-blend-mode: overlay; // Optional blending for effect
+        // }
+    }
+
+    .content {
+        z-index: 1;
+        padding: 2rem;
+        max-width: 900px;
+    }
+
+    .logoMark {
+        margin-bottom: 2rem;
+        display: inline-block;
+        filter: drop-shadow(0 0 20px rgba(255, 76, 1, 0.3));
+
+        img {
+            width: 120px;
+            height: auto;
+        }
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
+    }
+
+    p {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        margin-bottom: 3rem;
+        font-family: var(--font-michroma);
+        letter-spacing: 2px;
+
+        @media (max-width: 768px) {
+            font-size: 1rem;
+        }
+    }
+
+    .ctaButton {
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 1rem 3rem;
+        font-size: 1.1rem;
+        font-family: var(--font-michroma);
+        text-transform: uppercase;
+        cursor: pointer;
+        border-radius: 4px;
+        box-shadow: 0 5px 15px rgba(255, 76, 1, 0.3);
+        transition: background 0.3s;
+
+        &:hover {
+            background: #ff6a2b; // Lighter orange
+        }
+    }
+
+    .scrollIndicator {
+        position: absolute;
+        bottom: 2rem;
+        font-size: 2rem;
+        color: rgba(255, 255, 255, 0.5);
+    }
+}
