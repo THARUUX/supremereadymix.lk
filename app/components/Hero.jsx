@@ -24,6 +24,9 @@ export default function Hero() {
                 />
             </motion.div>
 
+            <div className={styles.heroOverlay}>
+            </div>
+
             <div className={styles.content}>
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}

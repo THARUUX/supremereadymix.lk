@@ -7,6 +7,7 @@ import "./globals.scss";
 import Navbar from "./components/Navbar";
 import Contact from "./components/Contact";
 import Preloader from "./components/Preloader";
+import SmoothScroll from "./components/SmoothScroll";
 
 const mavenPro = Maven_Pro({
   subsets: ["latin"],
@@ -49,15 +50,19 @@ export default function RootLayout({ children }) {
 function ClientLayout({ children }) {
   const [loading, setLoading] = useState(true);
 
-  if (loading) {
-    return <Preloader onComplete={() => setLoading(false)} />;
-  }
-
   return (
     <>
-      <Navbar />
-      <main>{children}</main>
-      <Contact />
+      <AnimatePresence mode="wait">
+        {loading && <Preloader key="preloader" onComplete={() => setLoading(false)} />}
+      </AnimatePresence>
+
+      {!loading && (
+        <SmoothScroll>
+          <Navbar />
+          <main>{children}</main>
+          <Contact />
+        </SmoothScroll>
+      )}
     </>
   );
 }

@@ -1,8 +1,21 @@
 .technology {
     padding: 8rem 0;
     background: #f4f4f4;
+    position: relative;
+    overflow: hidden;
+
+    .bgWrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
 
     .container {
+        position: relative;
+        z-index: 1;
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 1.5rem;
@@ -31,7 +44,8 @@
     }
 
     .card {
-        background: white;
+        background: rgba(255, 255, 255, 0.24);
+        backdrop-filter: blur(3px);
         padding: 2.5rem;
         border-radius: 12px;
         border: 1px solid transparent;

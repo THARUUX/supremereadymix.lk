@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { FaCogs, FaRobot, FaChartLine, FaTruck, FaTools, FaBolt } from "react-icons/fa";
 import styles from "./Technology.module.scss";
+import DotGrid from "./ui/DotGrid";
 
 const features = [
     { icon: FaCogs, title: "Fully Automated Plants", desc: "Batching systems ensuring precision." },
@@ -16,6 +17,18 @@ const features = [
 export default function Technology() {
     return (
         <section className={styles.technology}>
+            <div className={styles.bgWrapper}>
+                <DotGrid
+                    dotSize={3}
+                    gap={25}
+                    baseColor="#e0e0e0" // Subtle grey for light mode
+                    activeColor="#FF4C01" // Brand orange
+                    proximity={100}
+                    shockRadius={200}
+                    shockStrength={8}
+                />
+            </div>
+
             <div className={styles.container}>
                 <motion.div
                     initial={{ opacity: 0 }}
