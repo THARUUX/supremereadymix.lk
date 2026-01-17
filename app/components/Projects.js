@@ -37,22 +37,22 @@ const clients = [
 ];
 
 const projects = [
-    { name: "Canterbury Golf", src: "/Projects/Canterbury Golf.png", size: "large", description: "Premium Golf Resort & Residencies" },
-    { name: "Cargills Art Distribution Center", src: "/Projects/Cargills Art Distribution Center , Katana.png", size: "wide", description: "Logistics & Distribution Hub" },
-    { name: "Dart Global Logistics", src: "/Projects/Dart Global Logistics.png", size: "normal", description: "Global Logistics Headquarters" },
-    { name: "Flood Gates Dikkowita", src: "/Projects/Flood Gates Dikkowita.png", size: "tall", description: "Infrastructure Development" },
-    { name: "Global Park", src: "/Projects/Global Park.png", size: "normal", description: "Industrial Park Complex" },
-    { name: "Hilton DoubleTree Hotel", src: "/Projects/Hilton DoubleTree Hotel.png", size: "large", description: "Luxury Hospitality Project" },
-    { name: "Melwa", src: "/Projects/Melwa.png", size: "normal", description: "Steel Manufacturing Plant" },
-    { name: "Oakwood Enclave", src: "/Projects/Oakwood Enclave.png", size: "tall", description: "Exclusive Residential Enclave" },
-    { name: "Oceana Beach Resort", src: "/Projects/Oceana Beach Resort Apartments & Villas.png", size: "wide", description: "Beachfront Luxury Apartments" },
-    { name: "Prime Beach Front I", src: "/Projects/Prime Beach Front 1.png", size: "normal", description: "Premium Coastal Living" },
-    { name: "Prime Beach Front II", src: "/Projects/Prime Beach Front 2.png", size: "normal", description: "Extended Beachfront Residencies" },
-    { name: "Prime Bella", src: "/Projects/Prime Bella.png", size: "normal", description: "Modern Urban Living" },
-    { name: "The Palace by Prime Group", src: "/Projects/Prime Group\" The Palace \".png", size: "wide", description: "Ultra-Luxury Apartments" },
-    { name: "Santorini Resort Apartments", src: "/Projects/Santorini Resort Apartments.png", size: "normal", description: "Greek-Inspired Resort Living" },
-    { name: "Street Rush Residencies", src: "/Projects/Street Rush Recidencies.png", size: "normal", description: "Urban Residential Complex" },
-    { name: "The Colombo Border", src: "/Projects/The Colombo Border.png", size: "tall", description: "City Boundary Development" },
+    { name: "Canterbury Golf", src: "/Projects/Canterbury Golf.avif", size: "large", description: "Premium Golf Resort & Residencies" },
+    { name: "Cargills Art Distribution Center", src: "/Projects/Cargills Art Distribution Center , Katana.avif", size: "wide", description: "Logistics & Distribution Hub" },
+    { name: "Dart Global Logistics", src: "/Projects/Dart Global Logistics.avif", size: "normal", description: "Global Logistics Headquarters" },
+    { name: "Flood Gates Dikkowita", src: "/Projects/Flood Gates Dikkowita.avif", size: "tall", description: "Infrastructure Development" },
+    { name: "Global Park", src: "/Projects/Global Park.avif", size: "normal", description: "Industrial Park Complex" },
+    { name: "Hilton DoubleTree Hotel", src: "/Projects/Hilton DoubleTree Hotel.avif", size: "large", description: "Luxury Hospitality Project" },
+    { name: "Melwa", src: "/Projects/Melwa.avif", size: "normal", description: "Steel Manufacturing Plant" },
+    { name: "Oakwood Enclave", src: "/Projects/Oakwood Enclave.avif", size: "tall", description: "Exclusive Residential Enclave" },
+    { name: "Oceana Beach Resort", src: "/Projects/Oceana Beach Resort Apartments & Villas.avif", size: "wide", description: "Beachfront Luxury Apartments" },
+    { name: "Prime Beach Front I", src: "/Projects/Prime Beach Front 1.avif", size: "normal", description: "Premium Coastal Living" },
+    { name: "Prime Beach Front II", src: "/Projects/Prime Beach Front 2.avif", size: "normal", description: "Extended Beachfront Residencies" },
+    { name: "Prime Bella", src: "/Projects/Prime Bella.avif", size: "normal", description: "Modern Urban Living" },
+    { name: "The Palace by Prime Group", src: "/Projects/Prime Group The Palace.avif", size: "wide", description: "Ultra-Luxury Apartments" },
+    { name: "Santorini Resort Apartments", src: "/Projects/Santorini Resort Apartments.avif", size: "normal", description: "Greek-Inspired Resort Living" },
+    { name: "Street Rush Residencies", src: "/Projects/Street Rush Recidencies.avif", size: "normal", description: "Urban Residential Complex" },
+    { name: "The Colombo Border", src: "/Projects/The Colombo Border.avif", size: "tall", description: "City Boundary Development" },
 ];
 
 // Duplicate for infinite scroll
