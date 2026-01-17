@@ -2,8 +2,6 @@
   --primary-color: #FF4C01;
   --text-color: #1a1a1a;
   --bg-color: #ffffff;
-  --font-maven: var(--font-maven-pro);
-  --font-michroma: var(--font-michroma);
 }
 
 * {
@@ -22,12 +20,17 @@ body {
 body {
   color: var(--text-color);
   background: var(--bg-color);
-  font-family: var(--font-maven), sans-serif;
+  font-family: var(--font-maven-pro), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-michroma), sans-serif;
 }
 

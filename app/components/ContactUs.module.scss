@@ -1,0 +1,195 @@
+.contactUs {
+    position: relative;
+    padding: 8rem 0;
+    background: #0f0f0f;
+    color: white;
+    overflow: hidden;
+
+    // Background decoration
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: radial-gradient(circle at center, rgba(255, 76, 1, 0.05) 0%, transparent 70%);
+        z-index: 0;
+    }
+
+    .container {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        z-index: 1;
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: 5rem;
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, #aaa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #888;
+        }
+    }
+
+    .contentWrapper {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 4rem;
+
+        @media (max-width: 900px) {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+    }
+
+    .infoColumn {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .infoCard {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: transform 0.3s ease, background 0.3s;
+
+        &:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .iconBox {
+            background: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            box-shadow: 0 5px 15px rgba(255, 76, 1, 0.3);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        p,
+        a {
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+    }
+
+    .socialActions {
+        margin-top: 1rem;
+
+        .whatsappBtn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    .formColumn {
+        .contactForm {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            color: #1a1a1a;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+            .formGroup {
+                margin-bottom: 1.5rem;
+
+                label {
+                    display: block;
+                    margin-bottom: 0.5rem;
+                    font-weight: 600;
+                    color: #333;
+                    font-size: 0.9rem;
+                    text-transform: uppercase;
+                }
+
+                input,
+                textarea {
+                    width: 100%;
+                    padding: 1rem;
+                    border: 1px solid #ddd;
+                    border-radius: 8px;
+                    font-family: inherit;
+                    font-size: 1rem;
+                    background: #f9f9f9;
+                    transition: border-color 0.3s, box-shadow 0.3s;
+
+                    &:focus {
+                        outline: none;
+                        border-color: var(--primary-color);
+                        box-shadow: 0 0 0 3px rgba(255, 76, 1, 0.1);
+                        background: white;
+                    }
+                }
+            }
+
+            .submitBtn {
+                width: 100%;
+                background: var(--primary-color);
+                color: white;
+                border: none;
+                padding: 1rem;
+                font-size: 1.1rem;
+                font-weight: bold;
+                border-radius: 8px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.8rem;
+                transition: background 0.3s, transform 0.2s;
+                text-transform: uppercase;
+                font-family: var(--font-michroma);
+
+                &:hover {
+                    background: #ff6a2b;
+                    transform: translateY(-2px);
+                }
+            }
+        }
+    }
+}

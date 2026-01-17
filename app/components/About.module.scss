@@ -64,4 +64,33 @@
             margin-bottom: 1rem;
         }
     }
+
+    .quoteSection {
+        min-height: 700px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;   
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .quoteSection .quoteText {
+        padding: 2rem;
+    }
+
+    .quoteLeft {
+        font-size: 5rem;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .quoteRight {
+        font-size: 5rem;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
 }

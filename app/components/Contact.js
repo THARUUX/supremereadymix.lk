@@ -9,7 +9,7 @@ export default function Contact() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer id="contact" className={styles.footer}>
+        <footer id="" className={styles.footer}>
             <div className={styles.container}>
                 <div className={styles.topSection}>
                     <div className={styles.brand}>

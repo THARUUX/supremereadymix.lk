@@ -18,6 +18,16 @@ export default function Hero() {
     return (
         <section ref={ref} className={styles.hero}>
             <motion.div style={{ y, opacity }} className={styles.parallaxBg}>
+                <video
+                    className={styles.videoBackground}
+                    autoPlay
+                    muted
+                    loop={false}
+                    playsInline
+                    controls={false}
+                >
+                    <source src="/bg-video.mp4" type="video/mp4" />
+                </video>
                 <motion.div
                     className={styles.parallaxLayer}
                     style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]) }}

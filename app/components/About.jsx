@@ -2,6 +2,9 @@
 
 import { motion } from "framer-motion";
 import styles from "./About.module.scss";
+import { BiSolidQuoteLeft } from "react-icons/bi";
+import { BiSolidQuoteRight } from "react-icons/bi";
+
 
 export default function About() {
     return (
@@ -36,6 +39,14 @@ export default function About() {
                         </p>
                     </div>
                 </motion.div>
+            </div>
+            <div className={styles.quoteSection} data-aos="fade-in" data-aos-duration="2000">
+                <div className={styles.quoteLeft}><BiSolidQuoteLeft /></div>
+                <div className={styles.quoteText}><i>Our journey began with a single promise - to redefine the
+                    standards of ready-mix concrete in Sri Lanka. Today, Supreme
+                    Ready-Mix stands as a trusted partner for national infrastructure
+                    and urban development, built on innovation, precision, and people.</i></div>
+                <div className={styles.quoteRight}><BiSolidQuoteRight /></div>
             </div>
         </section>
     );

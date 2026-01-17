@@ -7,6 +7,7 @@ import styles from "./Sustainability.module.scss";
 export default function Sustainability() {
     return (
         <section className={styles.sustainability}>
+            <div className={styles.overlay}></div>
             <div className={styles.container}>
                 <motion.div
                     className={styles.content}
