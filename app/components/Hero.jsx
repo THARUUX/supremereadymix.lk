@@ -53,7 +53,8 @@ export default function Hero() {
                         <Image src="/supreme_logo.svg" alt="Supreme Icon" width={100} height={100} />
                     </motion.div>
 
-                    <h1>Building the Foundation of a Sustainable Sri Lanka</h1>
+                    <h1>Building the Foundation of a Sustainable 
+                       <br /> Sri Lanka</h1>
                     <p>Trusted Strength Since 2010</p>
 
                     <motion.button
