@@ -1,13 +1,6 @@
-"use client";
-
 import { Maven_Pro, Michroma } from "next/font/google";
-import { useState, useEffect } from "react";
-import { AnimatePresence } from "framer-motion";
 import "./globals.scss";
-import Navbar from "./components/Navbar";
-import Contact from "./components/Contact";
-import Preloader from "./components/Preloader";
-import SmoothScroll from "./components/SmoothScroll";
+import ClientLayout from "./ClientLayout";
 
 const mavenPro = Maven_Pro({
   subsets: ["latin"],
@@ -21,48 +14,77 @@ const michroma = Michroma({
   weight: "400",
 });
 
-// Since we are using "use client" for loading state, we can't export metadata directly here.
-// Best practice for root layout with metadata + client logic is to separate them, 
-// OR use a wrapper component. For simplicity in this structure, I'll keep the client logic here 
-// but note that 'metadata' export won't work in "use client".
-// CORRECT APPROACH: Move the layout UI to a client component wrapper or remove "use client" and use a separate Loading provider.
-// ADJUSTMENT: I will remove "use client" from here, and create a `Providers` or `ClientLayout` component.
-// WAIT: The prompt is to "Create a modern animated loading screen".
-// I'll create a new component `ClientLayout` that handles the loading state and wrap it here.
+export const metadata = {
+  title: "Supreme Ready-Mix | Building the Foundation of a Sustainable Sri Lanka",
+  description: "Sri Lanka’s leading ready-mix concrete supplier. Committed to quality, sustainability, and innovation in construction. Trusted Strength Since 2010.",
+  keywords: ["ready mix concrete", "concrete supplier", "Sri Lanka construction", "sustainable building", "Supreme Ready-Mix", "construction materials"],
+  openGraph: {
+    title: "Supreme Ready-Mix | Trusted Strength Since 2010",
+    description: "Building the Foundation of a Sustainable Sri Lanka with premium ready-mix concrete solutions.",
+    url: "https://supremereadymix.lk",
+    siteName: "Supreme Ready-Mix",
+    images: [
+      {
+        url: "/social-share.jpg", // Make sure to add this image later or use an existing one
+        width: 1200,
+        height: 630,
+        alt: "Supreme Ready-Mix Site Preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Supreme Ready-Mix | Trusted Strength Since 2010",
+    description: "Leading ready-mix concrete supplier in Sri Lanka.",
+    images: ["/social-share.jpg"], // Ensure this exists
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 export default function RootLayout({ children }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Supreme Ready-Mix (Pvt) Ltd",
+    "url": "https://supremereadymix.lk",
+    "logo": "https://supremereadymix.lk/supreme_logo.svg",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+94-11-3655555",
+      "contactType": "Customer Service",
+      "areaServed": "LK",
+      "availableLanguage": ["English", "Sinhala"]
+    },
+    "sameAs": [
+      "https://www.facebook.com/supremereadymix/",
+      "https://www.instagram.com/supremereadymix/",
+      "https://www.youtube.com/@supremereadymix1"
+    ]
+  };
+
   return (
     <html lang="en">
-      <head>
-        <title>Supreme Ready-Mix | Trusted Strength Since 2010</title>
-        <meta name="description" content="Sri Lanka’s leading ready-mix concrete supplier." />
-        <link rel="icon" href="/supreme_logo.svg" type="image/svg+xml" />
-      </head>
       <body className={`${mavenPro.variable} ${michroma.variable}`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <ClientLayout>
           {children}
         </ClientLayout>
       </body>
     </html>
-  );
-}
-
-function ClientLayout({ children }) {
-  const [loading, setLoading] = useState(true);
-
-  return (
-    <>
-      <AnimatePresence mode="wait">
-        {loading && <Preloader key="preloader" onComplete={() => setLoading(false)} />}
-      </AnimatePresence>
-
-      {!loading && (
-        <SmoothScroll>
-          <Navbar />
-          <main>{children}</main>
-          <Contact />
-        </SmoothScroll>
-      )}
-    </>
   );
 }
