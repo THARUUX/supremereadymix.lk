@@ -18,6 +18,9 @@ export const metadata = {
   title: "Supreme Ready-Mix | Building the Foundation of a Sustainable Sri Lanka",
   description: "Sri Lanka’s leading ready-mix concrete supplier. Committed to quality, sustainability, and innovation in construction. Trusted Strength Since 2010.",
   keywords: ["ready mix concrete", "concrete supplier", "Sri Lanka construction", "sustainable building", "Supreme Ready-Mix", "construction materials"],
+  icons: {
+    icon: '/supreme_logo.svg',
+  },
   openGraph: {
     title: "Supreme Ready-Mix | Trusted Strength Since 2010",
     description: "Building the Foundation of a Sustainable Sri Lanka with premium ready-mix concrete solutions.",
@@ -25,7 +28,7 @@ export const metadata = {
     siteName: "Supreme Ready-Mix",
     images: [
       {
-        url: "/social-share.jpg", // Make sure to add this image later or use an existing one
+        url: "/supreme_logo.svg", // Make sure to add this image later or use an existing one
         width: 1200,
         height: 630,
         alt: "Supreme Ready-Mix Site Preview",
