@@ -1,10 +1,35 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaArrowRight } from "react-icons/fa";
 import styles from "./ContactUs.module.scss";
 
 export default function ContactUs() {
+    const [result, setResult] = useState("");
+
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        setResult("Sending....");
+        const formData = new FormData(event.target);
+        formData.append("access_key", "f7d7a0f8-1804-4cec-9cdd-924735755581");
+        formData.append("subject", "New Contact Request from Supreme Ready-Mix Website");
+        formData.append("from_name", "Supreme Ready-Mix Website");
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+        if (data.success) {
+            setResult("Form Submitted Successfully");
+            event.target.reset();
+        } else {
+            setResult("Error! Please try again later.");
+        }
+    };
+
     return (
         <section id="contact" className={styles.contactUs}>
             <div className={styles.container}>
@@ -34,7 +59,7 @@ export default function ContactUs() {
                             <div>
                                 <h3>Call Us</h3>
                                 <p>Hotline: <a href="tel:0113655555">011 36 55555</a></p>
-                                <p>Sales: <a href="tel:+94777123456">+94 77 7123 456</a></p>
+                                <p>Sales: <a href="tel:+94721330630">+94 72 133 0630</a></p>
                             </div>
                         </div>
 
@@ -59,7 +84,7 @@ export default function ContactUs() {
                         </div>
 
                         <div className={styles.socialActions}>
-                            <a href="https://wa.me/94777123456" className={styles.whatsappBtn}>
+                            <a href="https://wa.me/94721330630" className={styles.whatsappBtn}>
                                 <FaWhatsapp /> Chat on WhatsApp
                             </a>
                         </div>
@@ -72,26 +97,27 @@ export default function ContactUs() {
                         transition={{ duration: 0.6, delay: 0.4 }}
                         className={styles.formColumn}
                     >
-                        <form className={styles.contactForm}>
+                        <form className={styles.contactForm} onSubmit={onSubmit}>
                             <div className={styles.formGroup}>
                                 <label>Your Name</label>
-                                <input type="text" placeholder="John Doe" required />
+                                <input type="text" name="name" placeholder="John Doe" required />
                             </div>
                             <div className={styles.formGroup}>
                                 <label>Email Address</label>
-                                <input type="email" placeholder="john@example.com" required />
+                                <input type="email" name="email" placeholder="john@example.com" required />
                             </div>
                             <div className={styles.formGroup}>
                                 <label>Phone Number</label>
-                                <input type="tel" placeholder="+94 7X XXX XXXX" />
+                                <input type="tel" name="phone" placeholder="+94 7X XXX XXXX" />
                             </div>
                             <div className={styles.formGroup}>
                                 <label>Project Details</label>
-                                <textarea rows="4" placeholder="Tell us about your requirements..." required></textarea>
+                                <textarea name="message" rows="4" placeholder="Tell us about your requirements..." required></textarea>
                             </div>
                             <button type="submit" className={styles.submitBtn}>
                                 Send Message <FaArrowRight />
                             </button>
+                            {result && <span className={styles.formResult}>{result}</span>}
                         </form>
                     </motion.div>
                 </div>

@@ -1,0 +1,129 @@
+.followUs {
+    padding: 8rem 0;
+    background: #0f0f0f; // Matching dark theme of ContactUs/Footer
+    color: white;
+    overflow: hidden;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .header {
+        margin-bottom: 4rem;
+
+        .label {
+            font-family: var(--font-michroma);
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            line-height: 1;
+            margin: 0;
+            background: linear-gradient(90deg, #fff, #555);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            @media (max-width: 768px) {
+                font-size: 2.5rem;
+            }
+        }
+    }
+
+    .linksWrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .linkItem {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 2rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-decoration: none;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        transition: padding-left 0.4s ease;
+
+        &:last-child {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .name {
+            font-size: 3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            z-index: 2;
+
+            @media (max-width: 768px) {
+                font-size: 1.8rem;
+            }
+        }
+
+        .line {
+            flex-grow: 1;
+            height: 1px;
+            background: var(--primary-color);
+            margin: 0 2rem;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .handle {
+            font-family: var(--font-michroma); // Tech font
+            font-size: 1rem;
+            color: var(--primary-color);
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.4s ease;
+            margin-right: 2rem;
+            display: inline-block;
+
+            @media (max-width: 768px) {
+                display: none; // Hide handle on mobile to save space
+            }
+        }
+
+        .arrow {
+            font-size: 2rem;
+            opacity: 0.5;
+            transition: all 0.3s;
+        }
+
+        &:hover {
+            padding-left: 2rem; // Identation on hover
+
+            .name {
+                color: var(--primary-color); // Orange
+                -webkit-text-stroke: 1px var(--primary-color);
+            }
+
+            .line {
+                transform: scaleX(1);
+            }
+
+            .handle {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .arrow {
+                opacity: 1;
+                transform: rotate(45deg);
+                color: var(--primary-color);
+            }
+        }
+    }
+}

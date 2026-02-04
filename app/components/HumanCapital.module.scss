@@ -1,0 +1,130 @@
+.humanCapital {
+    padding: 8rem 0;
+    background: #f9f9f9; // Light background to differentiate
+    overflow: hidden;
+    position: relative;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+
+        @media (max-width: 1000px) {
+            flex-direction: column;
+        }
+    }
+
+    .parallaxWrapper {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        overflow: hidden; // Ensure the scaling/moving image doesn't overflow
+
+        @media (max-width: 1000px) {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            order: -1;
+            margin-bottom: 3rem;
+        }
+    }
+
+    .parallaxImage {
+        width: 100%;
+        height: 120%; // Make it taller than container for parallax movement
+        background: url('/sideimg.avif') center/cover no-repeat;
+        position: absolute;
+        top: -10%; // Center the taller image
+        left: 0;
+
+        @media (max-width: 1000px) {
+            height: 100%;
+            top: 0;
+            background-attachment: scroll; // Disable parallax on mobile if desired or keep it
+        }
+    }
+
+    .content {
+        flex: 1;
+        width: 55%;
+        padding-right: 2rem;
+
+        @media (max-width: 1000px) {
+            width: 100%;
+            padding-right: 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-family: var(--font-michroma);
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+
+        .desc {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .sectionsWrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sectionBlock {
+            h3 {
+                font-size: 1.3rem;
+                color: #222;
+                margin-bottom: 1rem;
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+
+                .sectionIcon {
+                    color: var(--primary-color);
+                }
+            }
+
+            .featureList {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    position: relative;
+                    padding-left: 1.5rem;
+                    margin-bottom: 0.8rem;
+                    font-size: 1rem;
+                    color: #444;
+                    line-height: 1.5;
+
+                    &::before {
+                        content: '•';
+                        position: absolute;
+                        left: 0;
+                        color: var(--primary-color);
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
